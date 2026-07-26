@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NIKE - Store</title>
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <style>
+    /* Scroll suave nativo */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* ESTILOS DE NAVEGACIÓN Y ESTADO ACTIVO */
+    .navbar-nav .nav-link {
+      color: #6c757d;
+      font-weight: 500;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 4px !important;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #000;
+    }
+
+    .navbar-nav .nav-link.active {
+      color: #000 !important;
+      font-weight: 800 !important;
+      border-bottom: 2px solid #000 !important;
+    }
+    
+    .img-fit-full {
+      width: 100%;
+      height: 100%;
+      object-fit: contain; 
+      object-position: center;
+    }
+
+    .img-fit-cover {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* EFECTO HOVER EN IMÁGENES */
+    .hover-zoom {
+      transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      will-change: transform;
+    }
+
+    .hover-zoom:hover {
+      transform: scale(1.08) translateY(-4px);
+      cursor: pointer;
+    }
+
+    /* ESTILOS DEL FOOTER */
+    .hover-opacity {
+      transition: opacity 0.2s ease;
+    }
+    .hover-opacity:hover {
+      opacity: 0.7;
+    }
+    .hover-white {
+      transition: color 0.2s ease;
+    }
+    .hover-white:hover {
+      color: #ffffff !important;
+    }
+  </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbarNike" data-bs-offset="100" tabindex="0">
+
+  <!-- 1. BARRA DE NAVEGACIÓN (NAVBAR) -->
+  <nav id="navbarNike" class="navbar navbar-expand-lg navbar-light bg-white border-bottom py-3 px-4 sticky-top">
+    <div class="container-fluid">
+      
+      <a class="navbar-brand fw-black fs-3 text-uppercase" href="#inicio" style="font-family: 'Impact', sans-serif; letter-spacing: 1px;">
+        NIKE
+      </a>
+      
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav gap-4 text-uppercase" style="font-size: 0.85rem; letter-spacing: 0.5px;">
+          <li class="nav-item">
+            <a class="nav-link active" href="#inicio">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#tendencias">Tendencias</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#coleccion">Colección</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#categorias">Categorías</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="d-flex align-items-center gap-3">
+        <div class="position-relative d-none d-md-block">
+          <span class="position-absolute top-50 start-0 translate-middle-y ps-3 text-secondary">
+            <i class="bi bi-search" style="font-size: 0.9rem;"></i>
+          </span>
+          <input type="text" class="form-control rounded-pill border-0 ps-5 pe-4 py-2" placeholder="Buscar" style="background-color: #f5f5f5; width: 180px; font-size: 0.85rem;">
+        </div>
+        
+        <a href="#" class="text-dark fs-5 text-decoration-none">
+          <i class="bi bi-heart"></i>
+        </a>
+        
+        <a href="#" class="text-dark fs-5 text-decoration-none position-relative">
+          <i class="bi bi-bag"></i>
+          <span id="cart-badge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger d-none" style="font-size: 0.65rem;">
+            0
+          </span>
+        </a>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- 2. SECCIÓN PRINCIPAL (HERO SECTION) -->
+  <section id="inicio" class="container-fluid bg-white py-5 px-0 overflow-hidden">
+    <div class="row w-100 g-0 m-0 align-items-center">
+      
+      <div class="col-12 col-md-6 p-5 position-relative d-flex flex-column justify-content-center row-gap-4">
+        
+        <div class="position-absolute start-50 top-50 translate-middle text-uppercase fw-bold user-select-none" 
+             style="font-size: 15rem; color: #f4f4f4; z-index: 1; font-family: 'Impact', sans-serif;">
+          AIR
+        </div>
+
+        <div class="position-relative" style="z-index: 2;">
+          <div class="mb-3">
+            <span class="badge text-dark fw-bold text-uppercase px-2 py-1" style="background-color: #ccff00; font-size: 0.75rem;">
+              Nuevo Lanzamiento
+            </span>
+          </div>
+
+          <h1 class="display-1 fw-black text-uppercase lh-1 mb-4" style="font-family: 'Impact', 'Arial Black', sans-serif; letter-spacing: -1px;">
+            Because you can't<br>wait
+          </h1>
+
+          <p class="text-secondary fs-6 mb-5" style="max-width: 420px; line-height: 1.6;">
+            Diseñadas para la velocidad, diseñadas para la calle. Siente la revolución de la amortiguación reactiva.
+          </p>
+
+          <a href="#tendencias" class="btn btn-dark text-uppercase fw-bold rounded-pill px-5 py-3 text-white text-decoration-none" style="font-size: 0.85rem; letter-spacing: 1px;">
+            Comprar Ahora
+          </a>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 p-4 d-flex justify-content-center align-items-center overflow-hidden" style="max-height: 550px;">
+        <img src="imagen 1.png" 
+             alt="Nike Air Max" 
+             class="img-fluid img-fit-full hover-zoom rounded-1 product-trigger"
+             data-name="Nike Air Max Revolution"
+             data-category="Edición Especial Hero"
+             data-price="$199.90"
+             data-desc="Diseñadas para la velocidad y la calle con la última tecnología de amortiguación de aire reactiva. Maximum performance y máxima comodidad durante todo el día."
+             data-img="imagen 1.png">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 3. SECCIÓN: TENDENCIAS DE LA SEMANA -->
+  <section id="tendencias" class="container-fluid bg-white py-5 px-4">
+    
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h2 class="fw-black text-uppercase m-0" style="font-family: 'Impact', sans-serif; letter-spacing: 1px;">
+        Tendencias de la semana
+      </h2>
+      
+      <div class="d-flex gap-2">
+        <button class="btn btn-outline-dark rounded-circle d-flex align-items-center justify-content-center p-0" 
+                type="button" data-bs-target="#carouselZapatos" data-bs-slide="prev" style="width: 40px; height: 40px;">
+          <i class="bi bi-chevron-left"></i>
+        </button>
+        <button class="btn btn-outline-dark rounded-circle d-flex align-items-center justify-content-center p-0" 
+                type="button" data-bs-target="#carouselZapatos" data-bs-slide="next" style="width: 40px; height: 40px;">
+          <i class="bi bi-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+
+    <div id="carouselZapatos" class="carousel slide" data-bs-ride="false">
+      <div class="carousel-inner">
+        
+        <!-- DIAPOSITIVA 1 -->
+        <div class="carousel-item active">
+          <div class="row g-4">
+            
+            <div class="col-12 col-sm-6 col-md-3">
+              <div class="border-0 position-relative">
+                <span class="badge position-absolute top-0 start-0 m-3 bg-white text-dark text-uppercase fw-bold" style="font-size: 0.65rem; padding: 12px 14px; z-index: 2;">Más vendido</span>
+                <div class="bg-light p-3 rounded-2 d-flex justify-content-center align-items-center overflow-hidden" style="height: 250px;">
+                  <img src="imagen 2.png" 
+                       class="img-fit-full hover-zoom product-trigger" 
+                       alt="Nike Dunk Low"
+                       data-name="Nike Dunk Low"
+                       data-category="Zapatillas para hombre"
+                       data-price="$119.90"
+                       data-desc="Creadas para las pistas y llevadas a las calles, las Nike Dunk Low regresan con revestimientos nítidos y colores originales."
+                       data-img="imagen 2.png">
+                </div>
+                <div class="pt-3">
+                  <h5 class="fw-bold text-uppercase m-0" style="font-size: 0.9rem;">Nike Dunk Low</h5>
+                  <p class="text-secondary small m-0">Zapatillas para hombre</p>
+                  <p class="fw-bold small mt-1">$119.90</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-3">
+              <div class="border-0">
+                <div class="bg-light p-3 rounded-2 d-flex justify-content-center align-items-center overflow-hidden" style="height: 250px;">
+                  <img src="imagen 3.png" 
+                       class="img-fit-full hover-zoom product-trigger" 
+                       alt="Air Jordan 1 Retro"
+                       data-name="Air Jordan 1 Retro"
+                       data-category="Zapatillas de perfil alto"
+                       data-price="$180.00"
+                       data-desc="Un ícono de la cultura sneaker. Confeccionadas con materiales de calidad superior y amortiguación Nike Air integrada."
+                       data-img="imagen 3.png">
+                </div>
+                <div class="pt-3">
+                  <h5 class="fw-bold text-uppercase m-0" style="font-size: 0.9rem;">Air Jordan 1 Retro</h5>
+                  <p class="text-secondary small m-0">Zapatillas de perfil alto</p>
+                  <p class="fw-bold small mt-1">$180.00</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-3">
+              <div class="border-0">
+                <div class="bg-light p-3 rounded-2 d-flex justify-content-center align-items-center overflow-hidden" style="height: 250px;">
+                  <img src="imagen 4.png" 
+                       class="img-fit-full hover-zoom product-trigger" 
+                       alt="Nike Air Zoom Pegasus"
+                       data-name="Nike Air Zoom Pegasus"
+                       data-category="Running para asfalto"
+                       data-price="$135.50"
+                       data-desc="Zapatillas de running con una respuesta de amortiguación optimizada. Ligeras, duraderas y perfectas para entrenar a diario."
+                       data-img="imagen 4.png">
+                </div>
+                <div class="pt-3">
+                  <h5 class="fw-bold text-uppercase m-0" style="font-size: 0.9rem;">Nike Air Zoom Pegasus</h5>
+                  <p class="text-secondary small m-0">Running para asfalto</p>
+                  <p class="fw-bold small mt-1">$135.50</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-3">
+              <div class="border-0 position-relative">
+                <span class="badge position-absolute top-0 start-0 m-3 text-dark text-uppercase fw-bold" style="background-color: #ccff00; font-size: 0.65rem; padding: 6px 10px; z-index: 2;">Sostenible</span>
+                <div class="bg-light p-3 rounded-2 d-flex justify-content-center align-items-center overflow-hidden" style="height: 250px;">
+                  <img src="imagen 5.png" 
+                       class="img-fit-full hover-zoom product-trigger" 
+                       alt="Nike Air Force 1 '07"
+                       data-name="Nike Air Force 1 '07"
+                       data-category="Zapatillas clásicas"
+                       data-price="$110.00"
+                       data-desc="El fulgor sigue vivo con un clásico del baloncesto que aporta un toque fresco a tus detalles más característicos."
+                       data-img="imagen 5.png">
+                </div>
+                <div class="pt-3">
+                  <h5 class="fw-bold text-uppercase m-0" style="font-size: 0.9rem;">Nike Air Force 1 '07</h5>
+                  <p class="text-secondary small m-0">Zapatillas clásicas</p>
+                  <p class="fw-bold small mt-1">$110.00</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- DIAPOSITIVA 2 -->
+        <div class="carousel-item">
+          <div class="row g-4">
+            
+            <div class="col-12 col-sm-6 col-md-3">
+              <div class="border-0">
+                <div class="bg-light p-3 rounded-2 d-flex justify-content-center align-items-center overflow-hidden" style="height: 250px;">
+                  <img src="imagen 7.webp" 
+                       class="img-fit-full hover-zoom product-trigger" 
+                       alt="Nike Air Max Plus"
+                       data-name="Nike Air Max Plus"
+                       data-category="Zapatillas urbanas"
+                       data-price="$185.00"
+                       data-desc="Con tecnología Tuned Air para una estabilidad excelente y una amortiguación increíble. Diseño de líneas sinuosas icónico."
+                       data-img="imagen 7.webp">
+                </div>
+                <div class="pt-3">
+                  <h5 class="fw-bold text-uppercase m-0" style="font-size: 0.9rem;">Nike Air Max Plus</h5>
+                  <p class="text-secondary small m-0">Zapatillas urbanas</p>
+                  <p class="fw-bold small mt-1">$185.00</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-3">
+              <div class="border-0">
+                <div class="bg-light p-3 rounded-2 d-flex justify-content-center align-items-center overflow-hidden" style="height: 250px;">
+                  <img src="imagen 8.webp" 
+                       class="img-fit-full hover-zoom product-trigger" 
+                       alt="Nike VaporMax"
+                       data-name="Nike VaporMax"
+                       data-category="Zapatillas deportivas"
+                       data-price="$210.00"
+                       data-desc="Experiencia ultra flexible y flotante. Diseñadas con material Flyknit para un ajuste ultra ligero envolvente."
+                       data-img="imagen 8.webp">
+                </div>
+                <div class="pt-3">
+                  <h5 class="fw-bold text-uppercase m-0" style="font-size: 0.9rem;">Nike VaporMax</h5>
+                  <p class="text-secondary small m-0">Zapatillas deportivas</p>
+                  <p class="fw-bold small mt-1">$210.00</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-3">
+              <div class="border-0">
+                <div class="bg-light p-3 rounded-2 d-flex justify-content-center align-items-center overflow-hidden" style="height: 250px;">
+                  <img src="imagen 9.webp" 
+                       class="img-fit-full hover-zoom product-trigger" 
+                       alt="Nike Metcon 9"
+                       data-name="Nike Metcon 9"
+                       data-category="Entrenamiento de alta intensidad"
+                       data-price="$150.00"
+                       data-desc="El estándar de oro para el entrenamiento con pesas y levantamiento. Placa Hyperlift más grande para estabilidad superior."
+                       data-img="imagen 9.webp">
+                </div>
+                <div class="pt-3">
+                  <h5 class="fw-bold text-uppercase m-0" style="font-size: 0.9rem;">Nike Metcon 9</h5>
+                  <p class="text-secondary small m-0">Entrenamiento de alta intensidad</p>
+                  <p class="fw-bold small mt-1">$150.00</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-3">
+              <div class="border-0">
+                <div class="bg-light p-3 rounded-2 d-flex justify-content-center align-items-center overflow-hidden" style="height: 250px;">
+                  <img src="imagen 10.jpg" 
+                       class="img-fit-full hover-zoom product-trigger" 
+                       alt="Nike Invincible 3"
+                       data-name="Nike Invincible 3"
+                       data-category="Máxima amortiguación"
+                       data-price="$190.00"
+                       data-desc="Amortiguación máxima para proteger cada paso. Espuma ZoomX ultraconfortable que te mantiene en pie durante cualquier distancia."
+                       data-img="imagen 10.webp">
+                </div>
+                <div class="pt-3">
+                  <h5 class="fw-bold text-uppercase m-0" style="font-size: 0.9rem;">Nike Invincible 3</h5>
+                  <p class="text-secondary small m-0">Máxima amortiguación</p>
+                  <p class="fw-bold small mt-1">$190.00</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. SECCIÓN NEGRA: INGENIERÍA NIKE -->
+  <section id="coleccion" class="container-fluid text-white py-5 px-4" style="background-color: #000000;">
+    <div class="row align-items-center w-100 m-0 g-5">
+      
+      <div class="col-12 col-md-6 text-center overflow-hidden">
+        <img src="imagen 6.png" 
+             alt="Revolucion Air" 
+             class="img-fluid img-fit-full hover-zoom rounded-4 product-trigger" 
+             style="max-height: 500px;"
+             data-name="Nike Air Revolution Prototype"
+             data-category="Ingeniería Nike"
+             data-price="$220.00"
+             data-desc="Nuestra tecnología icónica utiliza aire presurizado en una cápsula resistente pero flexible para proporcionar más flexibilidad sin comprometer la estructura."
+             data-img="imagen 6.png">
+      </div>
+      
+      <div class="col-12 col-md-6 p-md-5">
+        <span class="text-uppercase fw-bold" style="color: #ccff00; font-size: 0.8rem; letter-spacing: 1px;">
+          Ingenieria Nike
+        </span>
+        <h2 class="display-3 fw-black text-uppercase lh-1 mb-4 mt-2" style="font-family: 'Impact', sans-serif; letter-spacing: 1px;">
+          Revolucion Air
+        </h2>
+        <p class="text-secondary fs-6 mb-5" style="max-width: 500px; line-height: 1.7; color: #b3b3b3 !important;">
+          Nuestra tecnologia iconica utiliza aire presurizado en una capsula resistente pero flexible para proporcionar mas flexibilidad y elasticidad sin comprometer la estructura de la zapatilla. Más energía en cada paso, menos impacto en tus rodillas.
+        </p>
+        
+        <div class="row pt-4 border-top border-secondary">
+          <div class="col-6">
+            <div class="display-5 fw-bold" style="color: #ccff00; font-family: 'Impact', sans-serif;">25%</div>
+            <div class="text-uppercase text-secondary small mt-1" style="font-size: 0.75rem;">Mas ligero</div>
+          </div>
+          <div class="col-6">
+            <div class="display-5 fw-bold" style="color: #ccff00; font-family: 'Impact', sans-serif;">Max</div>
+            <div class="text-uppercase text-secondary small mt-1" style="font-size: 0.75rem;">Amortiguacion</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 5. SECCIÓN DE CATEGORÍAS -->
+  <section id="categorias" class="container-fluid bg-black py-5 px-4">
+    <div class="row g-3">
+      
+      <div class="col-12 col-md-6">
+        <div class="position-relative overflow-hidden rounded-3 bg-dark d-flex align-items-center justify-content-center" style="min-height: 500px; height: 100%;">
+          <img src="deporte.png" alt="Cancha Pro" class="img-fit-full hover-zoom position-absolute top-0 start-0">
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 d-flex flex-column gap-3">
+        
+        <div class="position-relative overflow-hidden rounded-3 bg-dark d-flex align-items-center justify-content-center" style="height: 240px;">
+          <img src="caminadora.png" alt="Entrenamiento" class="img-fit-full hover-zoom position-absolute top-0 start-0">
+        </div>
+
+        <div class="row g-3 m-0">
+          <div class="col-6 p-0 pe-2">
+            <div class="position-relative overflow-hidden rounded-3 bg-dark d-flex align-items-center justify-content-center" style="height: 245px;">
+              <img src="accesorios.png" alt="Accesorios" class="img-fit-full hover-zoom position-absolute top-0 start-0">
+            </div>
+          </div>
+
+          <div class="col-6 p-0 ps-2">
+            <div class="position-relative overflow-hidden rounded-3 bg-dark d-flex align-items-center justify-content-center" style="height: 245px;">
+              <img src="Ropa.png" alt="Estilo de Vida" class="img-fit-full hover-zoom position-absolute top-0 start-0">
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 6. SECCIÓN DE VIDEO -->
+  <section class="container-fluid bg-black py-5 px-4">
+    <div class="container">
+      
+      <div class="text-center text-white mb-4">
+        <span class="text-uppercase fw-bold" style="color: #ccff00; font-size: 0.8rem; letter-spacing: 1px;">En Acción</span>
+        <h2 class="fw-black text-uppercase mt-1" style="font-family: 'Impact', sans-serif; font-size: 2.5rem;">Siente la Experiencia</h2>
+      </div>
+
+      <div class="ratio ratio-16x9 rounded-4 overflow-hidden shadow-lg" style="max-width: 900px; margin: 0 auto;">
+        <video autoplay loop muted playsinline controls class="w-100 h-100 img-fit-cover">
+          <source src="tu-video.mp4" type="video/mp4">
+          Tu navegador no soporta videos HTML5.
+        </video>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER CENTRADO ==================== -->
+  <footer class="bg-black text-white pt-5 pb-3 border-top border-secondary border-opacity-25">
+    <div class="container-fluid px-4 px-md-5">
+      
+      <!-- SECCIÓN CENTRADA: LOGO NIKE Y REDES SOCIALES -->
+      <div class="d-flex flex-column align-items-center justify-content-center gap-3 pb-4 border-bottom border-secondary border-opacity-25 text-center">
+        
+        <!-- LOGO NIKE -->
+        <a class="navbar-brand fw-black fs-1 text-uppercase text-white text-decoration-none" href="#inicio" style="font-family: 'Impact', sans-serif; letter-spacing: 2px;">
+          NIKE
+        </a>
+        
+        <!-- REDES SOCIALES -->
+        <div class="d-flex align-items-center justify-content-center gap-4">
+          <a href="https://www.instagram.com/nike/" target="_blank" class="text-white fs-4 text-decoration-none hover-opacity">
+            <i class="bi bi-instagram"></i>
+          </a>
+          
+          <a href="https://www.facebook.com/nike" target="_blank" class="text-white fs-4 text-decoration-none hover-opacity">
+            <i class="bi bi-facebook"></i>
+          </a>
+          
+          <!-- WhatsApp (Reemplaza 573000000000 por tu número real) -->
+          <a href="https://wa.me/573142731494?text=Hola,%20estoy%20interesado%20en%20comprar%20un%20par%20de%20zapatillas" target="_blank" class="text-white fs-4 text-decoration-none hover-opacity">
+            <i class="bi bi-whatsapp"></i>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- SECCIÓN INFERIOR (ÚLTIMO RECTÁNGULO CENTRADO) -->
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center pt-3 text-secondary" style="font-size: 0.75rem; letter-spacing: 0.5px;">
+        <div class="mb-2 mb-md-0 text-center">
+          &copy; 2026 PAGINA NIKE
+        </div>
+        <div class="d-flex gap-4 text-uppercase justify-content-center">
+          <a href="#" class="text-secondary text-decoration-none hover-white">COLOMBIA</a>
+          <a href="#" class="text-secondary text-decoration-none hover-white">CONDICIONES DE USO</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==================== MODAL DEL PRODUCTO ==================== -->
+  <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 rounded-4 overflow-hidden">
+        <div class="modal-header border-0 pb-0">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4 p-md-5">
+          <div class="row align-items-center g-4">
+            
+            <div class="col-12 col-md-6 text-center bg-light rounded-4 p-4 d-flex justify-content-center align-items-center" style="min-height: 280px;">
+              <img id="modal-img" src="" class="img-fluid img-fit-full" style="max-height: 260px;" alt="Producto">
+            </div>
+
+            <div class="col-12 col-md-6 d-flex flex-column justify-content-center">
+              <span id="modal-category" class="badge bg-secondary text-uppercase mb-2 align-self-start" style="font-size: 0.7rem;"></span>
+              <h3 id="modal-title" class="fw-black text-uppercase mb-2" style="font-family: 'Impact', sans-serif; letter-spacing: 1px;"></h3>
+              <p id="modal-price" class="fs-4 fw-bold text-dark mb-3"></p>
+              
+              <p id="modal-desc" class="text-secondary small mb-4" style="line-height: 1.6;"></p>
+
+              <!-- Botón Añadir al carrito -->
+              <button id="btn-add-cart" class="btn btn-dark w-100 rounded-pill py-3 text-uppercase fw-bold d-flex align-items-center justify-content-center gap-2" style="letter-spacing: 1px;">
+                <i class="bi bi-bag-plus fs-5"></i> Añadir al carrito
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== NOTIFICACIÓN TOAST ==================== -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1100;">
+    <div id="cartToast" class="toast fade align-items-center text-white bg-dark border-0 rounded-3 shadow-lg" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body d-flex align-items-center gap-2 py-3 fs-6">
+          <i class="bi bi-check-circle-fill text-success fs-5"></i>
+          <span><strong>¡Producto añadido al carrito!</strong></span>
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      
+      // Manejo del estado activo de la barra de navegación
+      const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          navLinks.forEach(l => l.classList.remove('active'));
+          this.classList.add('active');
+        });
+      });
+
+      // Inicialización de Modal y Toast
+      const productModal = new bootstrap.Modal(document.getElementById('productModal'));
+      const cartToast = new bootstrap.Toast(document.getElementById('cartToast'));
+
+      let cartCount = 0;
+      const cartBadge = document.getElementById('cart-badge');
+
+      // Abrir modal al hacer clic en un zapato
+      const productTriggers = document.querySelectorAll('.product-trigger');
+      productTriggers.forEach(trigger => {
+        trigger.addEventListener('click', () => {
+          document.getElementById('modal-title').textContent = trigger.getAttribute('data-name');
+          document.getElementById('modal-category').textContent = trigger.getAttribute('data-category');
+          document.getElementById('modal-price').textContent = trigger.getAttribute('data-price');
+          document.getElementById('modal-desc').textContent = trigger.getAttribute('data-desc');
+          document.getElementById('modal-img').src = trigger.getAttribute('data-img');
+
+          productModal.show();
+        });
+      });
+
+      // Acción del botón "Añadir al carrito"
+      const btnAddCart = document.getElementById('btn-add-cart');
+      btnAddCart.addEventListener('click', () => {
+        productModal.hide();
+
+        cartCount++;
+        cartBadge.textContent = cartCount;
+        cartBadge.classList.remove('d-none');
+
+        cartToast.show();
+      });
+
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+/* Estilos específicos para replicar la estructura de la imagen de referencia */
+
+.barra-navegacion {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Dimensiones del logotipo */
+.imagen-logo {
+    height: 22px;
+    width: auto;
+    display: block;
+}
+
+/* Configuración de los enlaces del menú central */
+.contenedor-enlaces .enlace-menu {
+    color: #111111 !important;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+}
+
+/* Línea inferior para el enlace seleccionado (Collections) */
+.contenedor-enlaces .enlace-activo {
+    border-bottom: 2px solid #111111;
+    padding-bottom: 2px;
+}
+
+/* Personalización del campo de búsqueda */
+.contenedor-buscar {
+    width: 180px;
+}
+
+.contenedor-buscar .campo-buscar,
+.contenedor-buscar .icono-buscar {
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+/* Unificación de esquinas para el input-group redondeado de Bootstrap */
+.contenedor-buscar .icono-buscar {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    padding-right: 5px;
+}
+
+.contenedor-buscar .campo-buscar {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    padding-left: 5px;
+    box-shadow: none !important;
+}
+
+/* Eliminación de efectos visuales de transición y hovers dinámicos */
+.enlace-menu, 
+.enlace-icono, 
+.campo-buscar {
+    transition: none !important;
+}
+
+.enlace-menu:hover, 
+.enlace-icono:hover {
+    opacity: 1 !important;
+    color: #111111 !important;
+    filter: none !important;
+}
