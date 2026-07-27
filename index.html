@@ -11,6 +11,74 @@
   <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
+  <!-- ESTILOS PERSONALIZADOS INTERNOS -->
+  <style>
+    /* Scroll suave nativo */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* ESTILOS DE NAVEGACIÓN Y ESTADO ACTIVO */
+    .navbar-nav .nav-link {
+      color: #6c757d;
+      font-weight: 500;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 4px !important;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #000;
+    }
+
+    .navbar-nav .nav-link.active {
+      color: #000 !important;
+      font-weight: 800 !important;
+      border-bottom: 2px solid #000 !important;
+    }
+    
+    .img-fit-full {
+      width: 100%;
+      height: 100%;
+      object-fit: contain; 
+      object-position: center;
+    }
+
+    .img-fit-cover {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* EFECTO HOVER EN IMÁGENES */
+    .hover-zoom {
+      transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      will-change: transform;
+    }
+
+    .hover-zoom:hover {
+      transform: scale(1.08) translateY(-4px);
+      cursor: pointer;
+    }
+
+    /* ESTILOS DEL FOOTER */
+    .hover-opacity {
+      transition: opacity 0.2s ease;
+    }
+
+    .hover-opacity:hover {
+      opacity: 0.7;
+    }
+
+    .hover-white {
+      transition: color 0.2s ease;
+    }
+
+    .hover-white:hover {
+      color: #ffffff !important;
+    }
+  </style>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#navbarNike" data-bs-offset="100" tabindex="0">
 
@@ -89,13 +157,14 @@
           </p>
 
           <!-- BOTÓN COMPRAR AHORA CONFIGURADO PARA ABRIR EL MODAL -->
-            <button class="btn btn-dark rounded-pill px-4 py-2 text-uppercase fw-bold product-trigger"
-                      data-name="Nike Air Max Vision"
-                      data-price="$149.90"
-                      data-desc="Diseñadas para la velocidad, diseñadas para la calle. Siente la revolución de la amortiguación reactiva."
-                      data-img="imagen 1.png">
-                COMPRAR AHORA
-            </button>
+          <button class="btn btn-dark rounded-pill px-4 py-2 text-uppercase fw-bold product-trigger"
+                  data-name="Nike Air Max Vision"
+                  data-category="Nuevo Lanzamiento"
+                  data-price="$149.90"
+                  data-desc="Diseñadas para la velocidad, diseñadas para la calle. Siente la revolución de la amortiguación reactiva."
+                  data-img="imagen 1.png">
+              COMPRAR AHORA
+          </button>
         </div>
       </div>
 
@@ -292,7 +361,7 @@
             <div class="col-12 col-sm-6 col-md-3">
               <div class="border-0">
                 <div class="bg-light p-3 rounded-2 d-flex justify-content-center align-items-center overflow-hidden" style="height: 250px;">
-                  <img src="imagen 10.jpg" 
+                  <img src="imagen 10.webp" 
                        class="img-fit-full hover-zoom product-trigger" 
                        alt="Nike Invincible 3"
                        data-name="Nike Invincible 3"
@@ -328,32 +397,31 @@
              data-name="Nike Air Revolution Prototype"
              data-category="Ingeniería Nike"
              data-price="$220.00"
-             data-desc="Nuestra tecnología icónica utiliza aire presurizado en una cápsula
-             resistente pero flexible para proporcionar más flexibilidad sin comprometer la estructura."
+             data-desc="Nuestra tecnología icónica utiliza aire presurizado en una cápsula resistente pero flexible para proporcionar más flexibilidad sin comprometer la estructura."
              data-img="imagen 6.png">
       </div>
       
       <div class="col-12 col-md-6 p-md-5">
         <span class="text-uppercase fw-bold" style="color: #ccff00; font-size: 0.8rem; letter-spacing: 1px;">
-          Ingenieria Nike
+          Ingeniería Nike
         </span>
         <h2 class="display-3 fw-black text-uppercase lh-1 mb-4 mt-2" style="font-family: 'Impact', sans-serif; letter-spacing: 1px;">
-          Revolucion Air
+          Revolución Air
         </h2>
         <p class="text-secondary fs-6 mb-5" style="max-width: 500px; line-height: 1.7; color: #b3b3b3 !important;">
-          Nuestra tecnologia iconica utiliza aire presurizado en una capsula resistente pero flexible para proporcionar 
-          mas flexibilidad y elasticidad sin comprometer la estructura de la zapatilla. Más energía en cada paso,
-           menos impacto en tus rodillas.
+          Nuestra tecnología icónica utiliza aire presurizado en una cápsula resistente pero flexible para proporcionar 
+          más flexibilidad y elasticidad sin comprometer la estructura de la zapatilla. Más energía en cada paso,
+          menos impacto en tus rodillas.
         </p>
         
         <div class="row pt-4 border-top border-secondary">
           <div class="col-6">
             <div class="display-5 fw-bold" style="color: #ccff00; font-family: 'Impact', sans-serif;">25%</div>
-            <div class="text-uppercase text-secondary small mt-1" style="font-size: 0.75rem;">Mas ligero</div>
+            <div class="text-uppercase text-secondary small mt-1" style="font-size: 0.75rem;">Más ligero</div>
           </div>
           <div class="col-6">
             <div class="display-5 fw-bold" style="color: #ccff00; font-family: 'Impact', sans-serif;">Max</div>
-            <div class="text-uppercase text-secondary small mt-1" style="font-size: 0.75rem;">Amortiguacion</div>
+            <div class="text-uppercase text-secondary small mt-1" style="font-size: 0.75rem;">Amortiguación</div>
           </div>
         </div>
       </div>
@@ -416,15 +484,11 @@
   <footer class="bg-black text-white pt-5 pb-3 border-top border-secondary border-opacity-25">
     <div class="container-fluid px-4 px-md-5">
       
-      <!-- SECCIÓN CENTRADA: LOGO NIKE Y REDES SOCIALES -->
       <div class="d-flex flex-column align-items-center justify-content-center gap-3 pb-4 border-bottom border-secondary border-opacity-25 text-center">
-        
-        <!-- LOGO NIKE -->
         <a class="navbar-brand fw-black fs-1 text-uppercase text-white text-decoration-none" href="#inicio" style="font-family: 'Impact', sans-serif; letter-spacing: 2px;">
           NIKE
         </a>
         
-        <!-- REDES SOCIALES -->
         <div class="d-flex align-items-center justify-content-center gap-4">
           <a href="https://www.instagram.com/nike/" target="_blank" class="text-white fs-4 text-decoration-none hover-opacity">
             <i class="bi bi-instagram"></i>
@@ -434,15 +498,12 @@
             <i class="bi bi-facebook"></i>
           </a>
           
-          <!-- WhatsApp (Reemplaza 573000000000 por tu número real) -->
           <a href="https://wa.me/573142731494?text=Hola,%20estoy%20interesado%20en%20comprar%20un%20par%20de%20zapatillas" target="_blank" class="text-white fs-4 text-decoration-none hover-opacity">
             <i class="bi bi-whatsapp"></i>
           </a>
         </div>
-
       </div>
 
-      <!-- SECCIÓN INFERIOR (ÚLTIMO RECTÁNGULO CENTRADO) -->
       <div class="d-flex flex-column flex-md-row justify-content-between align-items-center pt-3 text-secondary" style="font-size: 0.75rem; letter-spacing: 0.5px;">
         <div class="mb-2 mb-md-0 text-center">
           &copy; 2026 PAGINA NIKE
@@ -477,7 +538,6 @@
               
               <p id="modal-desc" class="text-secondary small mb-4" style="line-height: 1.6;"></p>
 
-              <!-- Botón Añadir al carrito -->
               <button id="btn-add-cart" class="btn btn-dark w-100 rounded-pill py-3 text-uppercase fw-bold d-flex align-items-center justify-content-center gap-2" style="letter-spacing: 1px;">
                 <i class="bi bi-bag-plus fs-5"></i> Añadir al carrito
               </button>
@@ -505,26 +565,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <script>
-     // El evento escucha a CUALQUIER elemento con la clase .product-trigger
-      document.querySelectorAll('.product-trigger').forEach(item => {
-      item.addEventListener('click', function() {
-      const name = this.getAttribute('data-name');
-      const price = this.getAttribute('data-price');
-      const desc = this.getAttribute('data-desc');
-      const img = this.getAttribute('data-img');
-
-     // Asigna los datos a la ventana modal
-      document.getElementById('modalTitle').innerText = name;
-      document.getElementById('modalPrice').innerText = price;
-      document.getElementById('modalDesc').innerText = desc;
-      document.getElementById('modalImg').src = img;
-
-     // Muestra el modal
-      const productModal = new bootstrap.Modal(document.getElementById('productModal'));
-      productModal.show();
-      });
-     });
-     document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('DOMContentLoaded', () => {
       
       // Manejo del estado activo de la barra de navegación
       const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
@@ -542,15 +583,15 @@
       let cartCount = 0;
       const cartBadge = document.getElementById('cart-badge');
 
-      // Abrir modal al hacer clic en un zapato
+      // Abrir modal al hacer clic en un zapato o botón de compra
       const productTriggers = document.querySelectorAll('.product-trigger');
       productTriggers.forEach(trigger => {
         trigger.addEventListener('click', () => {
-          document.getElementById('modal-title').textContent = trigger.getAttribute('data-name');
-          document.getElementById('modal-category').textContent = trigger.getAttribute('data-category');
-          document.getElementById('modal-price').textContent = trigger.getAttribute('data-price');
-          document.getElementById('modal-desc').textContent = trigger.getAttribute('data-desc');
-          document.getElementById('modal-img').src = trigger.getAttribute('data-img');
+          document.getElementById('modal-title').textContent = trigger.getAttribute('data-name') || '';
+          document.getElementById('modal-category').textContent = trigger.getAttribute('data-category') || '';
+          document.getElementById('modal-price').textContent = trigger.getAttribute('data-price') || '';
+          document.getElementById('modal-desc').textContent = trigger.getAttribute('data-desc') || '';
+          document.getElementById('modal-img').src = trigger.getAttribute('data-img') || '';
 
           productModal.show();
         });
